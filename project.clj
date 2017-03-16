@@ -1,4 +1,4 @@
-(defproject org.clojars.dyne/fxc "0.2.0"
+(defproject org.clojars.dyne/fxc "0.2.0-SNAPSHOT"
   :description "FXC simple secret sharing library"
   :url "https://secrets.dyne.org"
   :min-lein-version "2.0.0"
@@ -11,7 +11,12 @@
   :jvm-opts ["-Djava.security.egd=file:/dev/random" ;use a proper random source
              "-XX:-OmitStackTraceInFastThrow" ; stacktrace JVM exceptions
              ]
+  :license {:author "Denis Roio"
+            :email "jaromil@dyne.org"
+            :year 2017
+            :key "gpl-3.0"}
 
-  :profiles
-  {:dev {:dependencies [[midje "1.8.3"]]
-         :plugins [[lein-midje "3.1.3"]]}})
+  :deploy-repositories [["releases" {:url :clojars
+                                     :creds :gpg}]]
+  :profiles {:dev {:dependencies [[midje "1.8.3"]]
+                   :plugins [[lein-midje "3.1.3"]]}})
