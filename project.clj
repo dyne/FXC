@@ -1,15 +1,10 @@
-(defproject fxc "0.1.0-SNAPSHOT"
+(defproject org.clojars.dyne/fxc "0.2.0"
   :description "FXC simple secret sharing library"
   :url "https://secrets.dyne.org"
   :min-lein-version "2.0.0"
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [compojure "1.5.2"]
-                 [ring/ring-defaults "0.2.3"]
                  [org.clojure/math.numeric-tower "0.0.4"]
                  [com.tiemens/secretshare "1.4.2"]
-                 [json-html "0.4.0"]
-                 [formidable "0.1.10"]
-                 [markdown-clj "0.9.98"]
                  [jstrutz/hashids "1.0.1"]
                  [me.lemire.integercompression/JavaFastPFOR "0.1.10"]]
 
@@ -17,11 +12,6 @@
              "-XX:-OmitStackTraceInFastThrow" ; stacktrace JVM exceptions
              ]
 
-  :plugins [[lein-ring "0.9.7"]]
-  :ring {:handler fxc.handler/app}
   :profiles
-  {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
-                        [ring/ring-mock "0.3.0"]
-                        [midje "1.8.3"] 
-                        [kerodon "0.8.0"]]
+  {:dev {:dependencies [[midje "1.8.3"]]
          :plugins [[lein-midje "3.1.3"]]}})

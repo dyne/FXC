@@ -5,7 +5,6 @@
    [fxc.random :as rand]
    [fxc.core :refer :all]
    [fxc.marshalling :as ms]
-   [kerodon.core :as k]
    [clojure.pprint :as pp]))
 
 (pp/pprint {"------------------------------------------" "SECRETSHARING_TESTS" })
