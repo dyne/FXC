@@ -9,7 +9,13 @@
 
 [![Clojars Project](https://img.shields.io/clojars/v/org.clojars.dyne/fxc.svg)](https://clojars.org/org.clojars.dyne/fxc)
 
-The "FXC" cryptographic protocol is used to split a secret string in multiple parts and to recover it using some of these parts (quorum). The FXC protocol and its use case (mostly related to social digital currency) are explained in this document [Implementation of digital social currency infrastructure (D5.5)](http://dcentproject.eu/wp-content/uploads/2015/10/D5.5-Implementation-of-digital-social-currency-infrastructure-.pdf) produced as part of the research conducted in the [D-CENT project](http://dcentproject.eu).
+The "FXC" cryptographic protocol is used to split a secret string in multiple parts and to recover it using some of these parts (quorum). An functional application demonstrating its functionality is available at https://secrets.dyne.org .
+
+<img src="https://secrets.dyne.org/static/img/secret_ladies.jpg"
+	alt="Simple Secret Sharing is fun"
+	title="Simple Secret Sharing is fun">
+
+The FXC protocol and its use case (mostly related to social digital currency) are explained in this document [Implementation of digital social currency infrastructure (D5.5)](http://dcentproject.eu/wp-content/uploads/2015/10/D5.5-Implementation-of-digital-social-currency-infrastructure-.pdf) produced as part of the research conducted in the [D-CENT project](http://dcentproject.eu).
 
 # Acknowledgments
 

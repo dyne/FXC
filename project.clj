@@ -1,6 +1,6 @@
 (defproject org.clojars.dyne/fxc "0.2.0-SNAPSHOT"
   :description "FXC simple secret sharing library"
-  :url "https://secrets.dyne.org"
+  :url "https://github.com/dyne/fxc"
   :min-lein-version "2.0.0"
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/math.numeric-tower "0.0.4"]
