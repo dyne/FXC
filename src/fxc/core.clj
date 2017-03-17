@@ -22,7 +22,8 @@
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 (ns fxc.core
-  (:require [fxc.marshalling :as ms]))
+  (:require [fxc.marshalling :as ms]
+            [crypto.random :as pwgen]))
 
 ;; defaults
 (def settings
@@ -78,3 +79,15 @@
       (ms/slices2secrets settings)
       (ms/secrets2seq settings)
       ms/seq2str))
+
+(defn generate
+  "Generates a random password of type and size. Available types
+  are :bytes :base64 :base32 :hex and :url"
+  ([type size]
+   (cond
+     (= type :bytes)  (pwgen/bytes size)
+     (= type :base64) (pwgen/base64 size)
+     (= type :base32) (pwgen/base32 size)
+     (= type :hex)    (pwgen/hex size)
+     (= type :url)    (pwgen/url-part size)
+     :else nil)))
