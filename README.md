@@ -5,7 +5,7 @@
 		alt="software by Dyne.org"
 			title="software by Dyne.org" class="pull-right"></a>
 
-[![Build Status](https://travis-ci.org/dyne/fxc.svg?branch=master)](https://travis-ci.org/dyne/FXC)
+[![Build Status](https://travis-ci.org/dyne/FXC.svg?branch=master)](https://travis-ci.org/dyne/FXC)
 
 [![Clojars Project](https://img.shields.io/clojars/v/org.clojars.dyne/fxc.svg)](https://clojars.org/org.clojars.dyne/fxc)
 
@@ -17,6 +17,56 @@ The "FXC" cryptographic protocol is used to split a secret string in multiple pa
 </a>
 
 The FXC protocol and its use case (mostly related to social digital currency) are explained in this document [Implementation of digital social currency infrastructure (D5.5)](http://dcentproject.eu/wp-content/uploads/2015/10/D5.5-Implementation-of-digital-social-currency-infrastructure-.pdf) produced as part of the research conducted in the [D-CENT project](http://dcentproject.eu).
+
+# Usage
+
+```clojure
+(require 'fxc.core)
+(def secret (fxc.core/generate :url 32))
+(def shares (fxc.core/encode fxc.core/settings secret))
+(fxc.core/decode fxc.core/settings shares)
+```
+
+Default configuration settings:
+```clojure
+{:salt "La gatta sul tetto che scotta",
+ :description "FXC v1 (Simple Secret Sharing, Freecoin component)",
+ :protocol "FXC1", :alphabet "ABCDEFGHJKLMNPQRSTUVWXYZ23456789",
+ :quorum 3,
+ :prime prime4096,
+ :type "WEB",
+ :total 5,
+ :max 1024,
+ :length 6,
+ :entropy 3.1}
+```
+
+Public functions:
+
+- Encode
+```clojure
+fxc.core/encode
+([conf pass])
+  Takes a string and returns multiple strings that can be used to
+  retrieve the original according to settings.
+```
+- Decode
+```clojure
+fxc.core/decode
+([conf slices])
+  Takes a collection of strings and returns the original secret
+  according to the settings.
+```
+- Generate
+```clojure
+fxc.core/generate
+([type size])
+  Generates a random password of type and size. Available types
+  are :bytes :base64 :base32 :hex and :url
+```
+
+
+
 
 # Acknowledgments
 
