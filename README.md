@@ -70,6 +70,11 @@ fxc.core/generate
 
 # Acknowledgments
 
+<img src="https://github.com/dyne/FXC/blob/master/doc/Haarlemsche_ABC.jpg"
+	alt="Haarlem's Alphabet textile, from a Vlisco exhibition"
+	title="Haarlem's Alphabet textile, from a Vlisco exhibition"
+	style="float: right">
+
 Industry standard addressed: Information technology -- Security techniques -- Secret sharing
 - [ISO/IEC 19592-1:2016](https://www.iso.org/standard/65422.html) (Part 1: General)
 - [ISO/IEC FDIS 19592-2 (Under development)](https://www.iso.org/standard/65425.html) (Part 2: Fundamental mechanisms)
