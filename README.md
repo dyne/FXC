@@ -7,7 +7,7 @@
 
 [![Build Status](https://travis-ci.org/dyne/FXC.svg?branch=master)](https://travis-ci.org/dyne/FXC)
 
-[![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/dyne/FXC)
+[![Code Climate](https://codeclimate.com/github/dyne/FXC.png)](https://codeclimate.com/github/dyne/FXC)
 
 [![Clojars Project](https://img.shields.io/clojars/v/org.clojars.dyne/fxc.svg)](https://clojars.org/org.clojars.dyne/fxc)
 
