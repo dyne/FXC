@@ -37,7 +37,7 @@
   [length]
   (loop [x    length
          ; make sure the first digit is not a zero
-         res (+ 1 (digit 9))]
+         res (int (digit 9))]
     (if (> x 1)
       (recur (dec x) (str res (digit 10)))
       res)))

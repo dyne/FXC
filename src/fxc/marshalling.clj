@@ -61,13 +61,13 @@
   "takes a string and returns a sequence of integer ascii codes"
   [s] {:pre [(string? s)]
        :post [(coll? %)]}
-  (map #(int %) (seq s)))
+  (map int (seq s)))
 
 (defn intseq2str
   "takes a sequence of integer ascii codes and returns a string"
   [s] {:pre [(coll? s)]
        :post [(string? %)]}
-  (apply str (map #(char %) s)))
+  (str/join (map char s)))
 
 ;; internal functions
 
