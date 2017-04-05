@@ -44,14 +44,16 @@
 
 (defn encode-hash
   "takes an intseq and encodes it with hashids"
-  [conf o] {:pre  [(coll? o)]
+  [conf o] {:pre  [(coll? o)
+                   (<= (last o) (:total conf))]
             :post [(string? %)]}
   (h/encode conf o))
 
 (defn decode-hash
   "takes an hash and decodes it with hashids"
   [conf o] {:pre  [(string? o)]
-            :post [(coll? %)]}
+            :post [(coll? %)
+                   (<= (last %) (:total conf))]}
   (h/decode conf o))
 
 ;; (defn parse-int [s]
