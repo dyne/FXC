@@ -10,9 +10,9 @@
 (pp/pprint {"------------------------------------------" "FXC_CORE_TESTS"})
 
 ;; TODO: get some proper random
-(def salt (generate 32))
+(def salt (generate {} 32))
 ;; generate a random secret
-(def password (generate 16))
+(def password (generate {} 16))
 
 (pp/pprint {:password password
             :salt salt})

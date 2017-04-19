@@ -83,13 +83,15 @@
        ms/seq2str))
 
 (defn generate
-  "Generates a random string of a certain type and size. Available
-  types are :bytes :base64 :base32 :hex :url and :alnum"
-  [size]
+  "Generates a random string of a certain size. It optionally takes a
+  configuration map as first argument, supporting an :alphabet of
+  chars to be used"
+  ([size] (generate {} size))
+  ([conf size]
   (->> (loop [x (/ size 2)
               res [(r/digit 9)]]
          (if (> x 1)
            (recur (dec x)
                   (conj res (r/digit 9)))
            res))
-       (h/encode {})))
+       (h/encode conf))))
