@@ -64,10 +64,10 @@
                       (= (count %) (:total conf))]}
 
   (map #(ms/encode-hash settings %) (->> pass
-                                        ms/str2seq
-                                        (ms/seq2secrets settings)
-                                        (ms/secrets2slices settings)
-                                        )))
+                                         ms/str2seq
+                                         (ms/seq2secrets settings)
+                                         (ms/secrets2slices settings)
+                                         )))
 
 (defn decode
   "Takes a collection of strings and returns the original secret
