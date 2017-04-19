@@ -10,10 +10,9 @@
 (pp/pprint {"------------------------------------------" "FXC_CORE_TESTS"})
 
 ;; TODO: get some proper random
-(def salt (str (for [x (range 0 2)] (r/digit (Integer/MAX_VALUE)))))
+(def salt (generate 32))
 ;; generate a random secret
-(def password (str (h/encode {:salt salt}
-                           (for [x (range 0 3)] (r/digit (Integer/MAX_VALUE))))))
+(def password (generate 16))
 
 (pp/pprint {:password password
             :salt salt})
