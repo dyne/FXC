@@ -1,6 +1,8 @@
 engines:
  kibit:
     enabled: true
+ fixme:
+    enabled: true
 ratings:
   paths:
     - "**.clj"
