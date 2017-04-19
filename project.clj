@@ -6,7 +6,6 @@
                  [org.clojure/math.numeric-tower "0.0.4"]
                  [com.tiemens/secretshare "1.4.2"]
                  [jstrutz/hashids "1.0.1"]
-                 [crypto-random "1.2.0"]
                  [me.lemire.integercompression/JavaFastPFOR "0.1.10"]]
 
   :jvm-opts ["-Djava.security.egd=file:/dev/random" ;use a proper random source

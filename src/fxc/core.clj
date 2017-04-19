@@ -23,7 +23,9 @@
 
 (ns fxc.core
   (:require [fxc.marshalling :as ms]
-            [crypto.random :as pwgen]))
+            [fxc.random :as r]
+            [hashids.core :as h]))
+
 
 ;; defaults
 (def settings
@@ -76,18 +78,18 @@
                  :post [(string? %)]}
 
   (->> (map #(ms/decode-hash settings %) slices)
-      (ms/slices2secrets settings)
-      (ms/secrets2seq settings)
-      ms/seq2str))
+       (ms/slices2secrets settings)
+       (ms/secrets2seq settings)
+       ms/seq2str))
 
 (defn generate
-  "Generates a random password of type and size. Available types
-  are :bytes :base64 :base32 :hex and :url"
-  ([type size]
-   (cond
-     (= type :bytes)  (pwgen/bytes size)
-     (= type :base64) (pwgen/base64 size)
-     (= type :base32) (pwgen/base32 size)
-     (= type :hex)    (pwgen/hex size)
-     (= type :url)    (pwgen/url-part size)
-     :else nil)))
+  "Generates a random string of a certain type and size. Available
+  types are :bytes :base64 :base32 :hex :url and :alnum"
+  [size]
+  (->> (loop [x (/ size 2)
+              res [(r/digit 9)]]
+         (if (> x 1)
+           (recur (dec x)
+                  (conj res (r/digit 9)))
+           res))
+       (h/encode {})))
