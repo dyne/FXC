@@ -1,4 +1,4 @@
-(defproject org.clojars.dyne/fxc "0.4.0-SNAPSHOT"
+(defproject org.clojars.dyne/fxc "0.5.0-SNAPSHOT"
   :description "FXC simple secret sharing library"
   :url "https://github.com/dyne/fxc"
   :min-lein-version "2.0.0"

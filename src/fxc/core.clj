@@ -46,7 +46,10 @@
    :alphabet "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"
    ;; the salt should be a secret shared password
    ;; known to all possessors of the key pieces
-   :salt "La gatta sul tetto che scotta"
+   ;; the one here is used for secrets.dyne.org
+   ;; this salt has no real cryptographic importance since
+   ;; it is only used by hashids
+   :salt "gvXpBGp32DRIsPy1m1G3VlWHAF5nsi0auYnMIJQ0odZRKAGC"
 
    ;; random number generator settings
    :length 6
