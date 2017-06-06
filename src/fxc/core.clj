@@ -66,23 +66,23 @@
                       (string? (first %))
                       (= (count %) (:total conf))]}
 
-  (map #(ms/encode-hash settings %) (->> pass
+  (map #(ms/encode-hash conf %) (->> pass
                                          ms/str2seq
-                                         (ms/seq2secrets settings)
-                                         (ms/secrets2slices settings)
+                                         (ms/seq2secrets conf)
+                                         (ms/secrets2slices conf)
                                          )))
 
 (defn decode
   "Takes a collection of strings and returns the original secret
-  according to the settings"
+  according to the conf"
   [conf slices] {:pre [(coll? slices)
                        (map? conf)
                        (<= (count slices) (:total conf))]
                  :post [(string? %)]}
 
-  (->> (map #(ms/decode-hash settings %) slices)
-       (ms/slices2secrets settings)
-       (ms/secrets2seq settings)
+  (->> (map #(ms/decode-hash conf %) slices)
+       (ms/slices2secrets conf)
+       (ms/secrets2seq conf)
        ms/seq2str))
 
 (defn generate
