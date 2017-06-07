@@ -9,7 +9,7 @@
 
 [![Code Climate](https://codeclimate.com/github/dyne/FXC.png)](https://codeclimate.com/github/dyne/FXC)
 
-[![Clojars Project](https://img.shields.io/clojars/v/org.clojars.dyne/fxc.svg)](https://clojars.org/org.clojars.dyne/fxc)
+[![Clojars Project](https://clojars.org/org.clojars.dyne/fxc/latest-version.svg)](https://clojars.org/org.clojars.dyne/fxc)
 
 The "FXC" cryptographic protocol is used to split a secret string in multiple parts and to recover it using some of these parts (quorum). An functional application demonstrating its functionality is available at <a href="https://secrets.dyne.org">secrets.dyne.org
 

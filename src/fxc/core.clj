@@ -67,10 +67,10 @@
                       (= (count %) (:total conf))]}
 
   (map #(ms/encode-hash conf %) (->> pass
-                                         ms/str2seq
-                                         (ms/seq2secrets conf)
-                                         (ms/secrets2slices conf)
-                                         )))
+                                     ms/str2seq
+                                     (ms/seq2secrets conf)
+                                     (ms/secrets2slices conf)
+                                     )))
 
 (defn decode
   "Takes a collection of strings and returns the original secret
@@ -91,10 +91,10 @@
   chars to be used"
   ([size] (generate {} size))
   ([conf size]
-  (->> (loop [x (/ size 2)
-              res [(r/digit 9)]]
-         (if (> x 1)
-           (recur (dec x)
-                  (conj res (r/digit 9)))
-           res))
-       (h/encode conf))))
+   (->> (loop [x (/ size 2)
+               res [(r/digit 9)]]
+          (if (> x 1)
+            (recur (dec x)
+                   (conj res (r/digit 9)))
+            res))
+        (h/encode conf))))
