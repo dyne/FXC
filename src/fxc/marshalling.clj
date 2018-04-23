@@ -107,7 +107,7 @@
   [conf secrets]
   (for [slinum (range 0 (:total conf))
         :let [slice (loop [[verti & slices] (:secrets secrets)
-                           res[]]
+                           res []]
                       (let [num (second (nth verti slinum))
                             res (conj res num)]
                         (if (empty? slices)
