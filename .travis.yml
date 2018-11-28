@@ -5,7 +5,7 @@ branches:
   only:
     - master
 jdk:
-  - openjdk7
+  - openjdk8
   - oraclejdk7
   - oraclejdk8
 
