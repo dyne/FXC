@@ -25,7 +25,7 @@
 
 (ns fxc.random
   (:gen-class)
-  (:import  [java.security.SecureRandom]))
+  (:import  [java.security SecureRandom]))
 
 (defn digit
   "Generate a single random digit in the range of 0-9"
